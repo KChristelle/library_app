@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+:root{
+    --accent: #6f1a07;
+    --accentHover: #99240A;
+    --dark: #0000;
+    --light: #EDE3E9;
+    --transition: all 0.3s ease 0s;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html, body{
+    height: 100%;
+    overflow: auto;
+}
+
+body{
+    /* background: var(--accent); */
+    background-image: url("images/background2.jpeg");
+    padding: 0 10px;
+}
+
+.wrapper{
+    max-width: 500px;
+    width: 100%;
+    background: #fff;
+    margin: 90px auto;
+    padding: 30px;
+    box-shadow: 1px, 1px, 2px rgba(0,0,0,0.125);
+}
+
+.wrapper #title{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--accent);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.wrapper #title-login{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    color: var(--accent);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.wrapper p{
+    color: #757575;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.wrapper form{
+    width: 100%;
+}
+
+.wrapper form .input_field{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+} 
+
+.wrapper form .input_field label{
+    width: 200px;
+    color: #757575;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.wrapper form .input_field input,
+.wrapper form .input_field textarea {
+    width: 100%;
+    outline: none;
+    border: 1px solid #d5dbd9;
+    font-size: 15px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    transition: var(--transition);
+}
+
+.wrapper form .input_field textarea {
+    resize: none;
+    height: 125px;
+}
+
+wrapper form .input_field input:focus,
+wrapper form .input_field textarea:focus{
+    border: 1px solid var(--accentHover);
+}
+
+.wrapper form .input_field p{
+    font-size: 14px;
+    color: #757575;
+}
+
+.btn{
+    width: 100%;
+    padding: 8px 10px;
+    border: 0;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+}
+
+.wrapper form .input_field:last-child{
+    margin-bottom: 0;
+}
+
+.btn:hover{
+    background: var(--accentHover);
+}
+
+.wrapper form #dropdown{
+    color: #757575;
+    background-color: white;
+    width: 90%;
+    outline: none;
+    border: 1px solid #d5dbd9;
+    font-size: 15px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    transition: var(--transition);
+
+}
+/* --- Media Querries */
+
+@media (max-width: 420px) {
+    .wrapper form .input_field{
+        flex-direction: column;
+        align-items: flex-start;    
+    }
+
+    .wrapper form .input_field label{
+        margin-bottom: 5px;
+    }
+    
+}
