@@ -37,12 +37,12 @@ include(ROOT_PATH . "/app/controllers/posts.php");
         <!--  Admin Content-->
         <div class="admin-content">
             <div class="button-group">
-                <a href="create.php" class="btn btn-outline-info">Add a Post</a>
-                <a href="index.php" class="btn btn-outline-info">Manage Posts</a>
+                <a href="create.php" class="btn btn-outline-info">Add a Books</a>
+                <a href="index.php" class="btn btn-outline-info">Manage Books</a>
             </div>
 
             <div class="content">
-                <h2 class="page-title">Edit Post</h2>
+                <h2 class="page-title">Edit Book</h2>
                 <?php include(ROOT_PATH . "/app/helpers/form_errors.php"); ?>
                 <form action="edit.php" method="POST" enctype="multipart/form-data">
                     <input type="hidden" class="form-control" name="id" value="<?php echo $id ?>" id="text_input">
@@ -53,7 +53,7 @@ include(ROOT_PATH . "/app/controllers/posts.php");
 
                     <div class="form-group">
                         <label for="body">Body</label>
-                        <textarea name="body" id="body"><?php echo $title ?></textarea>
+                        <textarea name="body" id="body" class="form-control"><?php echo $title ?></textarea>
                     </div>
 
                     <div class="form-group">
@@ -80,18 +80,18 @@ include(ROOT_PATH . "/app/controllers/posts.php");
                         <?php if (empty($published) && $published == 0) : ?>
                             <input type="checkbox" class="form-check-input" name="published" id="publish">
                             <label for="publish" class="form-check-label">
-                                Publish
+                                Available
                             </label>
                         <?php else : ?>
                             <input type="checkbox" checked class="form-check-input" name="published" id="publish">
                             <label for="publish" class="form-check-label">
-                                Publish
+                                Available
                             </label>
                         <?php endif; ?>
                     </div>
 
                     <div class="button-submit">
-                        <button type="submit" name="update-post" class="btn btn-primary">Done</button>
+                        <button type="submit" name="update-book" class="btn btn-primary">Done</button>
                     </div>
                 </form>
             </div>

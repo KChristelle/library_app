@@ -1,6 +1,6 @@
 <?php
 include("../../path.php");
-include(ROOT_PATH . "/app/controllers/posts.php");
+include(ROOT_PATH . "/app/controllers/books.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,61 +37,65 @@ include(ROOT_PATH . "/app/controllers/posts.php");
         <!--  Admin Content-->
         <div class="admin-content">
             <div class="button-group">
-                <a href="create.php" class="btn btn-outline-info">Add a Post</a>
-                <a href="index.php" class="btn btn-outline-info">Manage Posts</a>
+                <a href="create.php" class="btn btn-outline-info">Add a Book</a>
+                <a href="index.php" class="btn btn-outline-info">Manage Books</a>
             </div>
 
             <div class="content">
-                <h2 class="page-title">Create a Post</h2>
+                <h2 class="page-title">Create a Book</h2>
 
                 <?php include(ROOT_PATH . "/app/helpers/form_errors.php"); ?>
-                
+
                 <form action="create.php" method="POST" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="title">Title</label>
-                            <input type="text" class="form-control" name="title" value="<?php echo $title ?>" id="text_input">
-                        </div>
+                    <!-- Title -->
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" name="title" value="<?php echo $title ?>" id="text_input">
+                    </div>
 
-                        <div class="form-group">
-                            <label for="body">Body</label>
-                            <textarea name="body" id="body"><?php echo $title ?></textarea>
-                        </div>
+                    <!-- Author -->
+                    <div class="form-group">
+                        <label for="title">Author</label>
+                        <input type="text" class="form-control" name="author" value="<?php echo $author ?>" id="text_input">
+                    </div>
 
-                        <div class="form-group">
-                            <label for="image">Image</label>
-                            <input type="file" name="image" class="form-control">
-                        </div>
+                    <!-- Description -->
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea name="description" id="description" class="form-control"><?php echo $description ?></textarea>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="tags">Tags</label>
-                            <select name="topic_id" id="topic" class="form-control">
-                                <option value=""></option>
-                                <?php foreach ($topics as $key => $topic) : ?>
-                                    <?php if (!empty($topic_id) && $topic_id == $topic['id']) : ?>
-                                        <option selected value="<?php echo $topic['id'] ?>"><?php echo $topic['name'] ?></option>
-                                    <?php else : ?>
-                                        <option value="<?php echo $topic['id'] ?>"><?php echo $topic['name'] ?></option>
-                                    <?php endif; ?>
+                    <!-- Category -->
+                    <div class="form-group">
+                        <label for="categories">Category</label>
+                        <select name="category_id" id="category" class="form-control">
+                            <option value=""></option>
+                            <?php foreach ($categories as $key => $category) : ?>
+                                <?php if (!empty($category_id) && $category_id == $category['id']) : ?>
+                                    <option selected value="<?php echo $category['id'] ?>"><?php echo $category['name'] ?></option>
+                                <?php else : ?>
+                                    <option value="<?php echo $category['id'] ?>"><?php echo $category['name'] ?></option>
+                                <?php endif; ?>
 
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
 
-                        <div class="form-check">
-                            <?php if (empty($published)) : ?>
-                                <input type="checkbox" class="form-check-input" name="published" id="publish">
-                                <label for="publish" class="form-check-label">
-                                    Publish
-                                </label>
-                            <?php else : ?>
-                                <input type="checkbox" checked class="form-check-input" name="published" id="publish">
-                                <label for="publish" class="form-check-label">
-                                    Publish
-                                </label>
-                            <?php endif; ?>
-                        </div>
+                    <div class="form-check">
+                        <?php if (empty($availability)) : ?>
+                            <input type="checkbox" class="form-check-input" name="availability" id="available">
+                            <label for="available" class="form-check-label">
+                                Available
+                            </label>
+                        <?php else : ?>
+                            <input type="checkbox" checked class="form-check-input" name="availability" id="available">
+                            <label for="available" class="form-check-label">
+                                Available
+                            </label>
+                        <?php endif; ?>
+                    </div>
                     <div class="button-submit">
-                        <button type="submit" name="add-post" class="btn btn-primary">Done</button>
+                        <button type="submit" name="add-book" class="btn btn-primary">Done</button>
                     </div>
                 </form>
             </div>
