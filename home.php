@@ -8,7 +8,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
     <html>
         <head>
             <title>Home</title>
-            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="assets/css/styles.css">
         </head>
         <body>
             <h1>Hello, <?php echo $_SESSION['user_name'];?></h1>
