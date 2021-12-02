@@ -5,23 +5,24 @@ include(ROOT_PATH . "/app/helpers/validate_book.php");
 
 $categories = selectAll('categories');
 $table = 'books';
-$books = getBooks();
+// $books = getBooks();
 $errors = array();
 
 $id = "";
 $title = "";
+$author = "";
 $description = "";
 $category_id = "";
 $availability = "";
 
-if (isset($_GET['id'])) {
-    $book = selectOne($table, ['id' => $_GET['id']]);
-    $id = $book['id'];
-    $title = $book['title'];
-    $description = $book['description'];
-    $category_id = $book['category_id'];
-    $availability = $book['availability'];
-}
+// if (isset($_GET['id'])) {
+//     $book = selectOne($table, ['id' => $_GET['id']]);
+//     $id = $book['id'];
+//     $title = $book['title'];
+//     $description = $book['description'];
+//     $category_id = $book['category_id'];
+//     $availability = $book['availability'];
+// }
 
 // Delete a book
 // if (isset($_GET['delete_id'])) {
@@ -67,6 +68,7 @@ if (isset($_POST['add-book'])) {
     } else {
         $title = $_POST['title'];
         $description = $_POST['description'];
+        $author = $_POST['author'];
         $category_id = $_POST['category_id'];
         $availability = isset($_POST['availability']) ? 1 : 0;
     }

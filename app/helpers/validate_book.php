@@ -9,12 +9,16 @@ function validateBook($book)
         array_push($errors, 'title required');
     }
 
-    if (empty($book['body'])) {
-        array_push($errors, 'body required');
+    if (empty($book['author'])) {
+        array_push($errors, 'author name required');
     }
 
-    if (empty($book['topic_id'])) {
-        array_push($errors, 'please select a topic');
+    if (empty($book['description'])) {
+        array_push($errors, 'description required');
+    }
+
+    if (empty($book['category_id'])) {
+        array_push($errors, 'please select a category');
     }
 
 
