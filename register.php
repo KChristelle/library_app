@@ -48,6 +48,11 @@
                     <label for="email">Email</label>
                     <input type="email" class="form-control" name="email" value= "<?php echo $email;?>" id="email" >
                 </div>
+
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <input type="role" class="form-control" name="role" value= "<?php echo $role;?>" id="role" >
+                </div>
                 
                 <div class="form-group">
                     <label for="password">Password</label>

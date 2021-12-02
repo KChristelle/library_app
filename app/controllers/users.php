@@ -5,6 +5,7 @@ include(ROOT_PATH . "/app/helpers/validate_user.php");
 
 $table = 'users';
 $access_users = selectAll($table, ['access' => 1]);
+// displayData($access_users);
 $errors = array();
 $id = '';
 $username = '';
@@ -21,13 +22,12 @@ function loginUser($user)
 {
     $_SESSION['id'] = $user['id'];
     $_SESSION['username'] = $user['username'];
-    $_SESSION['admin'] = $user['admin'];
+    $_SESSION['access'] = $user['access'];
     $_SESSION['message'] = 'You are now logged in';
     $_SESSION['type'] = 'success';
 
-    if ($_SESSION['admin']) {
+    if ($_SESSION['access']) {
         header('location: ' . BASE_URL . '/admin/dashboard.php');
-        // header('location: ' . BASE_URL . '/admin/posts/index.php');
     } else {
         header('location: ' . BASE_URL . '/index.php');
     }
@@ -43,11 +43,11 @@ if (isset($_POST['register-btn']) || isset($_POST['create-access'])) {
         unset($_POST['register-btn'], $_POST['conf_password'], $_POST['create-access']);
         $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
+
         if (isset($_POST['access'])) {
             $_POST['access'] = 1;
-            $_POST['role'] = "librarian";
             $user_id = create($table, $_POST);
-            
+
             $_SESSION['message'] = "Admin user created successfully";
             $_SESSION['type'] = "success";
             header('location: ' . BASE_URL . '/admin/users/index.php');
