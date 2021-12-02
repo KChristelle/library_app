@@ -58,6 +58,10 @@ include(ROOT_PATH . "/app/controllers/users.php");
                     </div>
 
                     <div class="form-group">
+                        <label for="role">Role</label>
+                        <input type="role" class="form-control" name="role" value="<?php echo $role; ?>" id="role">
+                    </div>
+                    <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
                     </div>

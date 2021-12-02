@@ -66,6 +66,7 @@ if (isset($_POST['register-btn']) || isset($_POST['create-access'])) {
         $access = isset($_POST['access']) ? 1 : 0;
         $password = $_POST['password'];
         $conf_password = $_POST['conf_password'];
+        $role = $_POST['role'];
     }
 }
 
@@ -106,7 +107,7 @@ if (isset($_POST['update-user'])) {
         $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
 
-        $_POST['admin'] = isset($_POST['admin']) ? 1 : 0;
+        $_POST['access'] = isset($_POST['access']) ? 1 : 0;
         $count = update($table, $id, $_POST);
         $_SESSION['message'] = "Admin user created successfully";
         $_SESSION['type'] = "success";
@@ -115,9 +116,10 @@ if (isset($_POST['update-user'])) {
     } else {
         $username = $_POST['username'];
         $email = $_POST['email'];
-        $access = isset($_POST['admin']) ? 1 : 0;
+        $access = isset($_POST['access']) ? 1 : 0;
         $password = $_POST['password'];
         $conf_password = $_POST['conf_password'];
+        $role = $_POST['role'];
     }
 }
 
@@ -128,5 +130,6 @@ if (isset($_GET['id'])) {
     $id = $user['id'];
     $username = $user['username'];
     $email = $user['email'];
-    $access = isset($user['admin']) ? 1 : 0;
+    $access = isset($user['access']) ? 1 : 0;
+    $role = $user['role'];
 }

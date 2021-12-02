@@ -29,7 +29,7 @@
 <?php include(ROOT_PATH . "/app/includes/header.php");?>
 
 <!-- Page Wrapper -->
-<div class="wrapper">
+<div class="admin-wrapper">
 
     <!-- Content-->
             <h2 id="title-login">Register</h2>
