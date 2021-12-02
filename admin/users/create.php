@@ -58,6 +58,11 @@ include(ROOT_PATH . "/app/controllers/users.php");
                     </div>
 
                     <div class="form-group">
+                        <label for="role">Role</label>
+                        <input type="role" class="form-control" name="role" value="<?php echo $role; ?>" id="role">
+                    </div>
+
+                    <div class="form-group">
                         <label for="password">Password</label>
                         <input required type="password" name="password" class="form-control" value="<?php echo $password; ?>">
                     </div>
@@ -76,7 +81,7 @@ include(ROOT_PATH . "/app/controllers/users.php");
                         <?php else : ?>
                             <input type="checkbox" class="form-check-input" name="access" id="access">
                             <label for="access" class="form-check-label">
-                                Librarian
+                                Librarian$role = $_POST['role'];
                             </label>
                         <?php endif; ?>
                     </div>

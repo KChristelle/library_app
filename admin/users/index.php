@@ -8,7 +8,7 @@ include(ROOT_PATH . "/app/controllers/users.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library| Manage Users</title>
+    <title>Library | Manage Users</title>
 
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -52,7 +52,7 @@ include(ROOT_PATH . "/app/controllers/users.php");
                         <th colspan="2">Action</th>
                     </thead>
                     <tbody>
-                        <?php foreach ($admin_users as $key => $user) : ?>
+                        <?php foreach ($access_users as $key => $user) : ?>
                             <tr>
                                 <td><?php echo $key +1;?></td>
                                 <td><?php echo $user['username'];?></td>

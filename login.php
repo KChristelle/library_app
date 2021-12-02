@@ -24,7 +24,7 @@
 
     <?php include(ROOT_PATH . "/app/includes/header.php") ?>
 
-    <div class="wrapper">
+    <div class="admin-wrapper">
         <div class="admin-content">
             <div class="content">
                 <form action="login.php" method="POST" class="col-md-6 offset-2">
