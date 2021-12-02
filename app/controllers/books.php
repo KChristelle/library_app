@@ -58,7 +58,7 @@ if (isset($_POST['add-book'])) {
         $_POST['user_id'] = 1;
         $_POST['availability'] = isset($_POST['availability']) ? 1 : 0;
         $_POST['description'] = htmlentities($_POST['description']);
-        $post_id = create($table, $_POST);
+        $book_id = create($table, $_POST);
 
         $_SESSION['message'] = "Book created successfully";
         $_SESSION['type'] = "success";

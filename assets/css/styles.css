@@ -21,7 +21,7 @@ html, body{
 }
 
 body{
-    background-image: url("../images/background.jpeg");
+    /* background-image: url("../images/background.jpeg"); */
     padding: 0 10px;
 }
 
