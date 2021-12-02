@@ -36,9 +36,23 @@ include(ROOT_PATH . "/app/controllers/books.php");
 
         <!--  Admin Content-->
         <div class="admin-content">
-            <div class="button-group">
-                <a href="create.php" class="btn btn-outline-info">Add a Book</a>
-                <a href="index.php" class="btn btn-outline-info">Manage Books</a>
+            <div class="row">
+                <div class="button-group col-md-4">
+                    <a href="create.php" class="btn btn-outline-info">Add a Book</a>
+                    <a href="index.php" class="btn btn-outline-info">Manage Books</a>
+                </div>
+
+                <div class="input-group rounded col-md-4 ml-auto">
+                    <form action="" method="get">
+                        <div class="input-group">
+                            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                            <button class="btn btn-outline-info border-0" id="search-addon" style="margin-left:5px;">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
             </div>
 
             <div class="content">
