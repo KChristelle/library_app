@@ -1,51 +1,68 @@
-<?php
-session_start();
-include "config.php";
+<?php include("path.php"); ?>
+<?php include(ROOT_PATH . "/app/controllers/users.php"); ?>
+<!DOCTYPE html>
+<html lang="en">
 
-if(isset($_POST['username']) && isset($_POST['password'])) {
-    
-    function validate($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-$username = validate($_POST['username']);
-$pass = validate($_POST['password']);
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-if(empty($username)){
-    header("Location: index.php?error=Username is required");
-    exit();
-}
-else if(empty($pass)) {
-    header("Location: index.php?error=Password is required");
-    exit();
-}
+    <!-- Work Sans Link -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
 
-$sql = "SELECT * FROM users WHERE user_name='$username' AND password='$pass'";
+    <link rel="stylesheet" href="assets/css/styles.css?version=51">
+    <link rel="stylesheet" href="assets/css/admin.css?version=51">
+    <title>Login</title>
+</head>
 
-$result = mysqli_query($conn, $sql);
+<body>
 
-if(mysqli_num_rows($result) === 1) {
-    $row = mysqli_fetch_assoc($result);
-    if($row['user_name'] === $username && $row['password'] === $pass) {
-        echo "You are logged in.";
-        // Add sessions for all variables 
-        $_SESSION['user_name'] = $row['user_name'];
-        // This line might cause errors
-        $_SESSION['name'] = $row['name'];
-        $_SESSION['id'] = $row['id'];
-        header("Location: home.php");
-        exit();
-    }
-    else{
-        header("Location: index.php?error=Incorrect Username or password");
-        exit();
-    }
-}
-else{
-    header("Location: index.php");
-    exit();
-}
+    <?php include(ROOT_PATH . "/app/includes/header.php") ?>
+
+    <div class="admin-wrapper">
+        <div class="admin-content">
+            <div class="content">
+                <form action="login.php" method="POST" class="col-md-6 offset-2">
+                    <?php include(ROOT_PATH . "/app/helpers/form_errors.php"); ?>
+                    
+                    <h2 class="page-title">Login</h2>
+
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" name="username" value="<?php echo $username; ?>" id="username">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" value="<?php echo $password; ?>" id="password">
+                    </div>
+
+                    <div class="button-submit">
+                        <button type="submit" name="login-btn" class="btn btn-primary">Login</button>
+                    </div>
+
+                    <p style="text-align: center;">Or <a href="<?php echo BASE_URL . '/register.php' ?>">Sign up</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Ckeditor -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
+
+    <!-- JavaScript -->
+    <script src="../../assets/js/scripts.js"></script>
+</body>
+
+</html>
