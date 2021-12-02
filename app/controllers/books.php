@@ -35,19 +35,20 @@ if (isset($_GET['delete_id'])) {
     exit();
 }
 
-// if (isset($_GET['published']) && isset($_GET['p_id'])) {
-//     $published = $_GET['published'];
-//     $p_id = $_GET['p_id'];
+// Lending and Returning a book
+if (isset($_GET['availability']) && isset($_GET['b_id'])) {
+    $availability = $_GET['availability'];
+    $b_id = $_GET['b_id'];
 
-//     // Update published field
-//     $count = update($table, $p_id, ['published' => $published]);
+    // Update availability field
+    $count = update($table, $b_id, ['availability' => $availability]);
 
-//     $_SESSION['message'] = "Book publish state changed";
-//     $_SESSION['type'] = "success";
+    $_SESSION['message'] = "Book availability state changed";
+    $_SESSION['type'] = "success";
 
-//     header("location: " . BASE_URL . "/admin/books/index.php");
-//     exit();
-// }
+    header("location: " . BASE_URL . "/admin/books/index.php");
+    exit();
+}
 
 // Create a book
 if (isset($_POST['add-book'])) {
@@ -76,27 +77,27 @@ if (isset($_POST['add-book'])) {
 
 
 // Update a Post
-// if (isset($_POST['update-book'])) {
-//     $errors = validateBook($_POST);
+if (isset($_POST['update-book'])) {
+    $errors = validateBook($_POST);
 
-//     if (count($errors) == 0) {
-//         $id = $_POST['id'];
-//         unset($_POST['update-book'], $_POST['id']);
-//         $_POST['user_id'] = $_SESSION['id'];
-//         $_POST['published'] = isset($_POST['published']) ? 1 : 0;
-//         $_POST['body'] = htmlentities($_POST['body']);
+    if (count($errors) == 0) {
+        $id = $_POST['id'];
+        unset($_POST['update-book'], $_POST['id']);
+        $_POST['user_id'] = $_SESSION['id'];
+        $_POST['availability'] = isset($_POST['availability']) ? 1 : 0;
+        $_POST['description'] = htmlentities($_POST['description']);
 
-//         $post_id = update($table, $id, $_POST);
+        $post_id = update($table, $id, $_POST);
 
-//         $_SESSION['message'] = "Post updated successfully";
-//         $_SESSION['type'] = "success";
+        $_SESSION['message'] = "Book updated successfully";
+        $_SESSION['type'] = "success";
 
-//         header("location: " . BASE_URL . "/admin/books/index.php");
-//         exit();
-//     } else {
-//         $title = $_POST['title'];
-//         $body = $_POST['body'];
-//         $topic_id = $_POST['topic_id'];
-//         $published = isset($_POST['published']) ? 1 : 0;
-//     }
-// }
+        header("location: " . BASE_URL . "/admin/books/index.php");
+        exit();
+    } else {
+        $title = $_POST['title'];
+        $description = $_POST['description'];
+        $category_id = $_POST['category_id'];
+        $availability = isset($_POST['availability']) ? 1 : 0;
+    }
+}

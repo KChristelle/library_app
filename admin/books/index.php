@@ -60,12 +60,12 @@ include(ROOT_PATH . "/app/controllers/books.php");
                                 <td><?php echo $book['title']; ?></td>
                                 <td><?php echo $book['author']; ?></td>
                                 <td><a href="edit.php?id=<?php echo $book['id']; ?>" id="edit">Edit</a></td>
-                                <td><a href="edit.php?delete_id=<?php echo $book['id']; ?>" id="delete">Delete</a></td>
+                                <td><a href="index.php?delete_id=<?php echo $book['id']; ?>" id="delete">Delete</a></td>
 
                                 <?php if ($book['availability']) : ?>
-                                    <td><a href="edit.php?published=0&p_id=<?php echo $book['id']; ?>" id="unpublish">Unpublish</a></td>
+                                    <td><a href="index.php?availability=0&b_id=<?php echo $book['id']; ?>" id="unavailale">Lend</a></td>
                                 <?php else : ?>
-                                    <td><a href="edit.php?published=1&p_id=<?php echo $book['id']; ?>" id="publish">Publish</a></td>
+                                    <td><a href="index.php?availability=1&b_id=<?php echo $book['id']; ?>" id="available">Return</a></td>
                                 <?php endif; ?>
                             </tr>
                         <?php endforeach; ?>

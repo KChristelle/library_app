@@ -81,7 +81,7 @@ include(ROOT_PATH . "/app/controllers/users.php");
                         <?php else : ?>
                             <input type="checkbox" class="form-check-input" name="access" id="access">
                             <label for="access" class="form-check-label">
-                                Librarian$role = $_POST['role'];
+                                Librarian
                             </label>
                         <?php endif; ?>
                     </div>
