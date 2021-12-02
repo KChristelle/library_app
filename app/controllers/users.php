@@ -45,7 +45,7 @@ if (isset($_POST['register-btn']) || isset($_POST['create-access'])) {
 
         if (isset($_POST['access'])) {
             $_POST['access'] = 1;
-            $__POST['role'] = "librarian";
+            $_POST['role'] = "librarian";
             $user_id = create($table, $_POST);
             
             $_SESSION['message'] = "Admin user created successfully";

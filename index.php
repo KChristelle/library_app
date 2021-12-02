@@ -12,29 +12,22 @@
 
 <body>
   <div class="wrapper">
-    <h1 id="title-login">Log In</h1>
+    <h1 id="title-login">You are logged in</h1>
     <!-- TODO Update the action and method when I create my database -->
-    <form action="login.php" method="post" id="survey-form">
+    <!-- <form action="login.php" method="post" id="survey-form">
 
-      <?php if (isset($_GET['error'])) { ?>
-        <p class="error"> <?php echo $_GET['error']; ?></p>
-      <?php } ?>
-
-      <!-- an email that is not formatted correctly, I will see an HTML5 validation error. -->
       <div class="input_field">
         <label for="email" id="email-label">Username:</label>
         <input type="email" name=username id="email" required placeholder="Enter your username" />
       </div>
-      <!-- Password field -->
       <div class="input_field">
         <label for="password" id="password-label">Password:</label>
         <input type="password" name="password" id="password" required placeholder="Password" />
       </div>
-      <!-- successful submission leads to Registration page -->
       <div class="inputfield">
         <input type="submit" value="Submit" class="btn" id="submit" >
       </div>
-    </form>
+    </form> -->
   </div>
   <script>
 
