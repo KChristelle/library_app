@@ -3,7 +3,6 @@
 <nav class="navbar navbar-expand-lg sticky-top">
     <a class="navbar-brand" href="<?php echo BASE_URL . "/index.php"; ?>" class="logo">
         <img src="<?php echo BASE_URL . '/assets/images/book.png'; ?>" style="width:10%; padding-top:.5em; padding-left: 1em;" alt="Logo">
-
     </a>
     <!-- <i id="menu" class="fa fa-bars menu-toggle fa-2x"></i> -->
 
