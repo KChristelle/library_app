@@ -32,7 +32,7 @@
       </div>
       <!-- successful submission leads to Registration page -->
       <div class="inputfield">
-        <input type="submit" value="Submit" class="btn" id="submit" onclick="document.location='registration.php'">
+        <input type="submit" value="Submit" class="btn" id="submit" >
       </div>
     </form>
   </div>
