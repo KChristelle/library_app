@@ -1,6 +1,6 @@
 <?php
 include("../../path.php");
-include(ROOT_PATH . "/app/controllers/posts.php");
+include(ROOT_PATH . "/app/controllers/books.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,18 +54,18 @@ include(ROOT_PATH . "/app/controllers/posts.php");
                     </thead>
                     <tbody>
 
-                        <?php foreach ($posts as $key => $post) : ?>
+                        <?php foreach ($books as $key => $book) : ?>
                             <tr>
                                 <td><?php echo $key + 1; ?></td>
-                                <td><?php echo $post['title']; ?></td>
-                                <td><?php echo $post['username']; ?></td>
-                                <td><a href="edit.php?id=<?php echo $post['id']; ?>" id="edit">Edit</a></td>
-                                <td><a href="edit.php?delete_id=<?php echo $post['id']; ?>" id="delete">Delete</a></td>
+                                <td><?php echo $book['title']; ?></td>
+                                <td><?php echo $book['author']; ?></td>
+                                <td><a href="edit.php?id=<?php echo $book['id']; ?>" id="edit">Edit</a></td>
+                                <td><a href="edit.php?delete_id=<?php echo $book['id']; ?>" id="delete">Delete</a></td>
 
-                                <?php if ($post['published']) : ?>
-                                    <td><a href="edit.php?published=0&p_id=<?php echo $post['id']; ?>" id="unpublish">Unpublish</a></td>
+                                <?php if ($book['availability']) : ?>
+                                    <td><a href="edit.php?published=0&p_id=<?php echo $book['id']; ?>" id="unpublish">Unpublish</a></td>
                                 <?php else : ?>
-                                    <td><a href="edit.php?published=1&p_id=<?php echo $post['id']; ?>" id="publish">Publish</a></td>
+                                    <td><a href="edit.php?published=1&p_id=<?php echo $book['id']; ?>" id="publish">Publish</a></td>
                                 <?php endif; ?>
                             </tr>
                         <?php endforeach; ?>

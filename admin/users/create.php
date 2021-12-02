@@ -68,21 +68,21 @@ include(ROOT_PATH . "/app/controllers/users.php");
                     </div>
 
                     <div class="form-check">
-                        <?php if ((isset($admin)) && $admin == 1) : ?>
-                            <input type="checkbox" checked class="form-check-input" name="admin" id="admin">
-                            <label for="admin" class="form-check-label">
-                                Administrator
+                        <?php if ((isset($access)) && $access == 1) : ?>
+                            <input type="checkbox" checked class="form-check-input" name="access" id="access">
+                            <label for="access" class="form-check-label">
+                                Librarian
                             </label>
                         <?php else : ?>
-                            <input type="checkbox" class="form-check-input" name="admin" id="admin">
-                            <label for="admin" class="form-check-label">
-                                Administrator
+                            <input type="checkbox" class="form-check-input" name="access" id="access">
+                            <label for="access" class="form-check-label">
+                                Librarian
                             </label>
                         <?php endif; ?>
                     </div>
 
                     <div class="button-submit">
-                        <button type="submit" name="create-admin" class="btn btn-primary">Done</button>
+                        <button type="submit" name="create-access" class="btn btn-primary">Done</button>
                     </div>
                 </form>
             </div>

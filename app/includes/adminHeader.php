@@ -1,6 +1,10 @@
 <?php ?>
 
 <header class="sticky-top">
+    <a href="<?php echo BASE_URL . "/index.php"; ?>" class="logo">
+        <img src="<?php echo BASE_URL . '/assets/images/book.png'; ?>" style="width:5%; padding-top:.5em; padding-left: 1em;" alt="Logo">
+
+    </a>
     <!-- <i id="menu" class="fa fa-bars menu-toggle fa-2x"></i> -->
 
     <ul class="nav">

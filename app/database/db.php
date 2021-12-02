@@ -136,7 +136,7 @@ function getPublishedPosts()
 function getBooks()
 {
     global $conn;
-    $sql = "SELECT b.*, u.user_name FROM books as b JOIN users AS u ON b.user_id = u.id WHERE u.admin=?";
-    $stmt = executeQuery($sql, ['admin' => 1]);
+    $sql = "SELECT b.*, u.username FROM books as b JOIN users AS u ON b.user_id = u.id WHERE u.access=?";
+    $stmt = executeQuery($sql, ['access' => 1]);
     return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 }

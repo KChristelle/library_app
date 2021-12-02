@@ -5,7 +5,7 @@ include(ROOT_PATH . "/app/helpers/validate_book.php");
 
 $categories = selectAll('categories');
 $table = 'books';
-// $books = getBooks();
+$books = getBooks();
 $errors = array();
 
 $id = "";
@@ -15,25 +15,26 @@ $description = "";
 $category_id = "";
 $availability = "";
 
-// if (isset($_GET['id'])) {
-//     $book = selectOne($table, ['id' => $_GET['id']]);
-//     $id = $book['id'];
-//     $title = $book['title'];
-//     $description = $book['description'];
-//     $category_id = $book['category_id'];
-//     $availability = $book['availability'];
-// }
+if (isset($_GET['id'])) {
+    $book = selectOne($table, ['id' => $_GET['id']]);
+    $id = $book['id'];
+    $title = $book['title'];
+    $description = $book['description'];
+    $category_id = $book['category_id'];
+    $availability = $book['availability'];
+}
 
+displayData($_GET['delete_id']);
 // Delete a book
-// if (isset($_GET['delete_id'])) {
-//     $count = delete($table, $_GET['delete_id']);
+if (isset($_GET['delete_id'])) {
+    $count = delete($table, $_GET['delete_id']);
 
-//     $_SESSION['message'] = "Book deleted successfully";
-//     $_SESSION['type'] = "success";
+    $_SESSION['message'] = "Book deleted successfully";
+    $_SESSION['type'] = "success";
 
-//     header("location: " . BASE_URL . "/admin/books/index.php");
-//     exit();
-// }
+    header("location: " . BASE_URL . "/admin/books/index.php");
+    exit();
+}
 
 // if (isset($_GET['published']) && isset($_GET['p_id'])) {
 //     $published = $_GET['published'];
@@ -55,7 +56,7 @@ if (isset($_POST['add-book'])) {
 
     if (count($errors) == 0) {
         unset($_POST['add-book']);
-        $_POST['user_id'] = 0;
+        $_POST['user_id'] = 1;
         $_POST['availability'] = isset($_POST['availability']) ? 1 : 0;
         $_POST['description'] = htmlentities($_POST['description']);
         $post_id = create($table, $_POST);
