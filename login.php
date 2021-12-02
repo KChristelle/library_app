@@ -25,12 +25,10 @@
     <?php include(ROOT_PATH . "/app/includes/header.php") ?>
 
     <div class="wrapper">
-        <div class="admin-content">
-            <div class="content">
-                <form action="login.php" method="POST" class="col-md-6 offset-2">
+                <form action="login.php" method="POST" id="survey-form">
                     <?php include(ROOT_PATH . "/app/helpers/form_errors.php"); ?>
                     
-                    <h2 class="page-title">Login</h2>
+                    <h2 id="title-login">Login</h2>
 
                     <div class="form-group">
                         <label for="username">Username</label>
@@ -48,8 +46,7 @@
 
                     <p style="text-align: center;">Or <a href="<?php echo BASE_URL . '/register.php' ?>">Sign up</a></p>
                 </form>
-            </div>
-        </div>
+            
     </div>
 
 

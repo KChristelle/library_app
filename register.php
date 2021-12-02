@@ -32,11 +32,9 @@
 <div class="wrapper">
 
     <!-- Content-->
-    <div class="admin-content">
-        <div class="content">
-            <h2 class="page-title">Register</h2>
+            <h2 id="title-login">Register</h2>
 
-            <form action="register.php" method="POST" class= "col-md-6 offset-2">
+            <form action="register.php" method="POST"  id="survey-form">
                 <?php include(ROOT_PATH . "/app/helpers/form_errors.php");?>
 
                 <div class="form-group">
@@ -70,8 +68,6 @@
 
                 <p style="text-align: center;">Or <a href="login.php">Login</a></p>
             </form>
-        </div>
-    </div>
 
 </div>
 
