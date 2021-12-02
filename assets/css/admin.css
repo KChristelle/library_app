@@ -1,9 +1,22 @@
 body{
     font-family: 'Work Sans', serif;
 }
-header {
+nav {
     background-color: rgb(40, 46, 49);
     height: 10vh;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover {
+    color: white;
+}
+
+nav ul li a i {
+    margin-right: 5px;
 }
 
 
