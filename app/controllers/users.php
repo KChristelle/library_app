@@ -21,11 +21,11 @@ function loginUser($user)
 {
     $_SESSION['id'] = $user['id'];
     $_SESSION['username'] = $user['username'];
-    $_SESSION['admin'] = $user['admin'];
+    $_SESSION['access'] = $user['access'];
     $_SESSION['message'] = 'You are now logged in';
     $_SESSION['type'] = 'success';
 
-    if ($_SESSION['admin']) {
+    if ($_SESSION['access']) {
         header('location: ' . BASE_URL . '/admin/dashboard.php');
         // header('location: ' . BASE_URL . '/admin/posts/index.php');
     } else {

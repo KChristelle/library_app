@@ -24,7 +24,6 @@ if (isset($_GET['id'])) {
     $availability = $book['availability'];
 }
 
-displayData($_GET['delete_id']);
 // Delete a book
 if (isset($_GET['delete_id'])) {
     $count = delete($table, $_GET['delete_id']);
