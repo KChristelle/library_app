@@ -13,6 +13,24 @@
 <body>
   <div class="wrapper">
     <h1 id="title-login">You are logged in</h1>
+<<<<<<< HEAD
+    <!-- TODO Update the action and method when I create my database -->
+    <!-- <form action="login.php" method="post" id="survey-form">
+
+      <div class="input_field">
+        <label for="email" id="email-label">Username:</label>
+        <input type="email" name=username id="email" required placeholder="Enter your username" />
+      </div>
+      <div class="input_field">
+        <label for="password" id="password-label">Password:</label>
+        <input type="password" name="password" id="password" required placeholder="Password" />
+      </div>
+      <div class="inputfield">
+        <input type="submit" value="Submit" class="btn" id="submit" >
+      </div>
+    </form> -->
+=======
+>>>>>>> a97839033a3bfa6278ce2d762a3fd63b716f96de
   </div>
   <script>
 

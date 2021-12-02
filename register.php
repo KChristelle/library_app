@@ -29,7 +29,7 @@
 <?php include(ROOT_PATH . "/app/includes/header.php");?>
 
 <!-- Page Wrapper -->
-<div class="admin-wrapper">
+<div class="wrapper">
 
     <!-- Content-->
     <div class="admin-content">
