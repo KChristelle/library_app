@@ -15,6 +15,8 @@ $description = "";
 $category_id = "";
 $availability = "";
 
+$search = '';
+
 if (isset($_GET['id'])) {
     $book = selectOne($table, ['id' => $_GET['id']]);
     $id = $book['id'];
@@ -76,6 +78,10 @@ if (isset($_POST['add-book'])) {
 }
 
 // Search for a book
+if (isset($_GET['search-btn'])) {
+    $search = $_GET['search'];    
+    $books = searchBooks($table, $search);
+}
 
 // Update a Post
 if (isset($_POST['update-book'])) {

@@ -45,8 +45,8 @@ include(ROOT_PATH . "/app/controllers/books.php");
                 <div class="input-group rounded col-md-4 ml-auto">
                     <form action="" method="get">
                         <div class="input-group">
-                            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                            <button class="btn btn-outline-info border-0" id="search-addon" style="margin-left:5px;">
+                            <input name="search" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                            <button name="search-btn" class="btn btn-outline-info border-0" id="search-addon" style="margin-left:5px;">
                                 <i class="fa fa-search"></i>
                             </button>
                         </div>
