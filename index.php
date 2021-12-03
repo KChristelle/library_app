@@ -1,22 +1,77 @@
+<?php
+include("path.php");
+include(ROOT_PATH . "/app/controllers/books.php");
+?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Log In</title>
-  <meta name="description" content="Log in page for library webapp" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library | Home</title>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- Work Sans Link -->
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+
+  <!-- <link rel="stylesheet" href="../assets/css/styles.css"> -->
+  <link rel="stylesheet" href="assets/css/admin.css">
 </head>
 
 <body>
-  <div class="wrapper">
-    <h1 id="title-login">You are logged in</h1>
-  </div>
-  <script>
+  <?php include("header.php") ?>
+  <!-- TODO Change CSS to user  -->
+  <!-- Home Page Wrapper -->
+  <div class="admin-wrapper">
 
-  </script>
+    <!--  Home Content-->
+    <div class="admin-content">
+      
+      <div class="content">
+        <h2 class="page-title">HomePage</h2>
+        <h4> <Center> Hello, User!</Center><br></h1>
+        
+        <?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
+        <table>
+          <thead>
+            <th></th>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th colspan="3">Status</th>
+          </thead>
+          <tbody>
+            <?php foreach ($books as $key => $book) : ?>
+              <tr>
+                <td><?php echo $key + 1; ?></td>
+                <td><?php echo $book['title']; ?></td>
+                <td><?php echo $book['author']; ?></td>
+                <!-- TODO Create a borrow.php file for this -->
+                <td><a href=""></a>Borrow</td>
+
+                
+              </tr>
+            <?php endforeach; ?>
+            
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+  </div>
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+  <!-- Ckeditor -->
+  <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
+
+  <!-- JavaScript -->
+  <script src="../assets/js/scripts.js"></script>
 </body>
 
 </html>

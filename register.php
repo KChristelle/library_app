@@ -29,7 +29,7 @@
 <?php include(ROOT_PATH . "/app/includes/header.php");?>
 
 <!-- Page Wrapper -->
-<div class="admin-wrapper">
+<div class="wrapper">
 
     <!-- Content-->
             <h2 id="title-login">Register</h2>
@@ -46,10 +46,14 @@
                     <label for="email">Email</label>
                     <input type="email" class="form-control" name="email" value= "<?php echo $email;?>" id="email" >
                 </div>
-
+                <!-- TODO This is not done in the correct way -->
                 <div class="form-group">
-                    <label for="role">Role</label>
-                    <input type="role" class="form-control" name="role" value= "<?php echo $role;?>" id="role" >
+                    <label for="roles">Role</label>
+                    <select name="role" id="role" class="form-control">
+                        <option value=""></option>
+                        <option value="student">Student</option>
+                        <option value="staff">Staff</option>
+                    </select>
                 </div>
                 
                 <div class="form-group">
