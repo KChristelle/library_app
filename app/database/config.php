@@ -3,12 +3,12 @@
 // Database credentials
 // TODO: Check root password
 
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'debian-sys-maint');
-define('DB_PASSWORD', '5jgYsof0ocJmW0re');
 // define('DB_SERVER', 'localhost');
 // define('DB_USERNAME', 'debian-sys-maint');
-// define('DB_PASSWORD', '6APkPQHobtK9ydtw');
+// define('DB_PASSWORD', '5jgYsof0ocJmW0re');
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'debian-sys-maint');
+define('DB_PASSWORD', '6APkPQHobtK9ydtw');
 define('DB_DATABASE', 'library');
 
 // Connect to MYSQL database

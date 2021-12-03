@@ -5,7 +5,6 @@ include(ROOT_PATH . "/app/helpers/validate_user.php");
 
 $table = 'users';
 $access_users = selectAll($table, ['access' => 1]);
-// displayData($access_users);
 $errors = array();
 $id = '';
 $username = '';
