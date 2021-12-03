@@ -44,7 +44,7 @@
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" value= "<?php echo $email;?>" id="email" >
+                    <input type="email" class="form-control" name="email" value= "<?php echo $email;?>" id="email" >
                 </div>
                 <div class="form-group">
                     <label for="roles">Role</label>
