@@ -21,32 +21,29 @@
 </head>
 
 <body>
-    <!-- TODO do we need the line below -->
-    <?php include(ROOT_PATH . "/app/includes/header.php") ?>
-
     <div class="wrapper">
-                <form action="index.php" method="POST" id="survey-form">
-                    <?php include(ROOT_PATH . "/app/helpers/form_errors.php"); ?>
-                    
-                    <h2 id="title-login">Login</h2>
+        <form action="index.php" method="POST" id="survey-form">
+            <?php include(ROOT_PATH . "/app/helpers/form_errors.php"); ?>
 
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" class="form-control" name="username" value="<?php echo $username; ?>" id="username">
-                    </div>
+            <h2 id="title-login">Login</h2>
 
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" name="password" value="<?php echo $password; ?>" id="password">
-                    </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name="username" value="<?php echo $username; ?>" id="username">
+            </div>
 
-                    <div class="button-submit">
-                        <button type="submit" name="login-btn" class="btn btn-primary">Login</button>
-                    </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" value="<?php echo $password; ?>" id="password">
+            </div>
 
-                    <p style="text-align: center;">Or <a href="<?php echo BASE_URL . '/register.php' ?>">Sign up</a></p>
-                </form>
-            
+            <div class="button-submit">
+                <button type="submit" name="login-btn" class="btn btn-primary">Login</button>
+            </div>
+
+            <p style="text-align: center;">Or <a href="<?php echo BASE_URL . '/register.php' ?>">Sign up</a></p>
+        </form>
+
     </div>
 
 
