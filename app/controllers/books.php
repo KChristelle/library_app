@@ -75,6 +75,7 @@ if (isset($_POST['add-book'])) {
     }
 }
 
+// Search for a book
 
 // Update a Post
 if (isset($_POST['update-book'])) {
