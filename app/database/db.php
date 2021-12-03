@@ -97,8 +97,6 @@ function searchBooks($table, $data){
     $sql = "SELECT * FROM $table WHERE title LIKE '%".$data."%';";
     $stmt = executeQuery($sql, $data);
     return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-
-
 }
 
 // Update
