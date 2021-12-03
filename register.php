@@ -46,7 +46,6 @@
                     <label for="email">Email</label>
                     <input type="email" class="form-control" value= "<?php echo $email;?>" id="email" >
                 </div>
-                <!-- TODO This is not done in the correct way -->
                 <div class="form-group">
                     <label for="roles">Role</label>
                     <select name="role" id="role" class="form-control">
