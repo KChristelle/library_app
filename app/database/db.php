@@ -94,7 +94,7 @@ function create($table, $data)
 // Search 
 function searchBooks($table, $data){
     global $conn;
-    $sql = "SELECT * FROM $table WHERE title LIKE '%".$data."%';";
+    $sql = "SELECT * FROM $table WHERE title LIKE '%".$data."%' OR author LIKE '%".$data."%';";
     $stmt = executeQuery($sql, $data);
     return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 }
