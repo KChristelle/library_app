@@ -91,6 +91,16 @@ function create($table, $data)
     return $stmt->insert_id;
 }
 
+// Search 
+function searchBooks($table, $data){
+    global $conn;
+    $sql = "SELECT * FROM $table WHERE title LIKE '%".$data."%';";
+    $stmt = executeQuery($sql, $data);
+    return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+
+
+}
+
 // Update
 function update($table, $id, $data)
 {
@@ -140,3 +150,4 @@ function getBooks()
     $stmt = executeQuery($sql, ['access' => 1]);
     return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 }
+

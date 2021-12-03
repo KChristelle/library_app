@@ -1,13 +1,12 @@
 <?php ?>
 
-<header class="sticky-top">
-    <a href="<?php echo BASE_URL . "/index.php"; ?>" class="logo">
-        <img src="<?php echo BASE_URL . '/assets/images/book.png'; ?>" style="width:5%; padding-top:.5em; padding-left: 1em;" alt="Logo">
-
+<nav class="navbar navbar-expand-lg sticky-top">
+    <a class="navbar-brand" href="<?php echo BASE_URL . "/index.php"; ?>" class="logo">
+        <img src="<?php echo BASE_URL . '/assets/images/book.png'; ?>" style="width:10%; padding-top:.5em; padding-left: 1em;" alt="Logo">
     </a>
     <!-- <i id="menu" class="fa fa-bars menu-toggle fa-2x"></i> -->
 
-    <ul class="nav">
+    <ul class="navbar-nav ml-auto">
         <?php if (isset($_SESSION['id'])) : ?>
             <li class="dropdown">
                 <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
@@ -25,4 +24,4 @@
         <?php endif; ?>
     </ul>
 
-</header>
+</nav>
