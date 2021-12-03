@@ -15,6 +15,8 @@ $description = "";
 $category_id = "";
 $availability = "";
 
+$calendar = "";
+
 $search = '';
 
 if (isset($_GET['id'])) {
@@ -43,7 +45,8 @@ if (isset($_GET['availability']) && isset($_GET['b_id'])) {
     $b_id = $_GET['b_id'];
 
     // Update availability field
-    $count = update($table, $b_id, ['availability' => $availability]);
+    $calendar = date("Y-m-d", time());
+    $count = update($table, $b_id, ['availability' => $availability, 'calendar'=> $calendar]);
 
     $_SESSION['message'] = "Book availability state changed";
     $_SESSION['type'] = "success";

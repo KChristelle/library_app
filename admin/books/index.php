@@ -67,7 +67,8 @@ include(ROOT_PATH . "/app/controllers/books.php");
                             <th></th>
                             <th>Title</th>
                             <th>Author</th>
-                            <th colspan="3">Action</th>
+                            <th colspan="3" style="text-align: center;">Action</th>
+                            <th>Date</th>
                         </thead>
                         <tbody>
 
@@ -84,6 +85,8 @@ include(ROOT_PATH . "/app/controllers/books.php");
                                     <?php else : ?>
                                         <td><a href="index.php?availability=1&b_id=<?php echo $book['id']; ?>" id="available">Return</a></td>
                                     <?php endif; ?>
+
+                                    <td><?php echo $book['calendar']; ?></td>
                                 </tr>
                             <?php endforeach; ?>
 
