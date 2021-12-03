@@ -102,6 +102,11 @@ wrapper form .input_field textarea:focus{
     color: #757575;
 }
 
+.home-wrapper{
+    display: flex;
+    height: calc(100% - 66px);
+
+}
 .btn{
     width: 100%;
     padding: 8px 10px;

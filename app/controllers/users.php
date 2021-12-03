@@ -28,7 +28,7 @@ function loginUser($user)
     if ($_SESSION['access']) {
         header('location: ' . BASE_URL . '/admin/dashboard.php');
     } else {
-        header('location: ' . BASE_URL . '/index.php');
+        header('location: ' . BASE_URL . '/home.php');
     }
 
 
