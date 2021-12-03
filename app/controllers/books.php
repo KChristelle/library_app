@@ -58,13 +58,17 @@ if (isset($_GET['availability']) && isset($_GET['b_id'])) {
 // Create a book
 if (isset($_POST['add-book'])) {
     $errors = validateBook($_POST);
+    $calendar = date("Y-m-d", time());
 
     if (count($errors) == 0) {
         unset($_POST['add-book']);
-        $_POST['user_id'] = 1;
+        $_POST['user_id'] = 2;
         $_POST['availability'] = isset($_POST['availability']) ? 1 : 0;
         $_POST['description'] = htmlentities($_POST['description']);
+        $_POST['calendar'] = $calendar;
+        $my_cal = $_POST['calendar'];
         $book_id = create($table, $_POST);
+       
 
         $_SESSION['message'] = "Book created successfully";
         $_SESSION['type'] = "success";

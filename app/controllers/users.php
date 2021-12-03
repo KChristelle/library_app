@@ -92,7 +92,7 @@ if (isset($_POST['login-btn'])) {
 // Delting an admin user
 if (isset($_GET['delete_id'])) {
     $count = delete($table, $_GET['delete_id']);
-    $_SESSION['message'] = "Admin user deleted";
+    $_SESSION['message'] = "User deleted";
     $_SESSION['type'] = "success";
     header('location: ' . BASE_URL . '/admin/users/index.php');
     exit();

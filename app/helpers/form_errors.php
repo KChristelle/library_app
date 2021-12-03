@@ -1,5 +1,5 @@
 <?php if(count($errors) > 0):?>
-    <div class="msg-error col-md-4 offset-4">
+    <div class="msg-error col-md-8 offset-2" style="margin-bottom:1em;">
         <?php foreach($errors as $error):?>
             <li><?php echo $error;?></li>
         <?php endforeach; ?>
