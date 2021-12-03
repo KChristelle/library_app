@@ -27,7 +27,7 @@ include(ROOT_PATH . "/app/controllers/books.php");
 
   <?php if (isset($_SESSION['id'])) : ?>
     <!-- Admin Header -->
-    <?php include(ROOT_PATH . "/app/includes/adminHeader.php") ?>
+    <?php include(ROOT_PATH . "/header.php") ?>
 
     <!-- Admin Page Wrapper -->
     <div class="admin-wrapper">
