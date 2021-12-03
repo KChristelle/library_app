@@ -58,8 +58,12 @@ include(ROOT_PATH . "/app/controllers/users.php");
                     </div>
 
                     <div class="form-group">
-                        <label for="role">Role</label>
-                        <input type="role" class="form-control" name="role" value="<?php echo $role; ?>" id="role">
+                        <label for="roles">Role</label>
+                        <select name="role" id="role" class="form-control">
+                            <option value="staff">Librarian</option>
+                            <option value="student">Student</option>
+                            <option value="staff">Staff</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
