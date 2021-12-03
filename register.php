@@ -67,7 +67,7 @@
                 <button type="submit" name="register-btn" class="btn btn-primary">Register</button>
             </div>
 
-            <p style="text-align: center;">Or <a href="login.php">Login</a></p>
+            <p style="text-align: center;">Or <a href="index.php">Login</a></p>
         </form>
 
     </div>

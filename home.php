@@ -45,6 +45,7 @@ include(ROOT_PATH . "/app/controllers/books.php");
           </form>
         </div>
 
+        
         <h2 class="page-title" id="dash-title">HomePage</h2>
         <?php if (isset($_SESSION['id'])) : ?>
           <h4>
@@ -70,11 +71,11 @@ include(ROOT_PATH . "/app/controllers/books.php");
 
                 <?php if ($book['availability']) : ?>
                   <td>
-                    <p id="unavailale">Borrowed</a>
+                    <p id="available">Available</a>
                   </td>
                 <?php else : ?>
                   <td>
-                    <p id="available">Available</a>
+                    <p id="unavailale">Borrowed</a>
                   </td>
                 <?php endif; ?>
 

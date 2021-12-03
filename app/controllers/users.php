@@ -4,7 +4,7 @@ include(ROOT_PATH . "/app/database/db.php");
 include(ROOT_PATH . "/app/helpers/validate_user.php");
 
 $table = 'users';
-$access_users = selectAll($table, ['access' => 1]);
+$access_users = selectAll($table);
 $errors = array();
 $id = '';
 $username = '';

@@ -57,7 +57,7 @@ nav ul li a i {
 .admin-wrapper .admin-content {
     flex: 8;
     height: calc(100%- 10vh);
-    padding: 2.5rem 5rem 5rem;
+    padding: 2.5rem 2.5rem 2.5rem;
     overflow-y: auto;
     margin-left: 20vw;
 }
@@ -65,10 +65,10 @@ nav ul li a i {
 .admin-wrapper .content {
     flex: 8;
     height: calc(100%- 10vh);
-    padding: 2.5rem 5rem 5rem;
+    padding: 2.5rem 2.5rem 2.5rem;
     overflow-y: auto;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
 }
 
 /* New ONE! */

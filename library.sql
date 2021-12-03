@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 02, 2021 at 04:58 PM
+-- Generation Time: Dec 03, 2021 at 08:59 PM
 -- Server version: 8.0.27
 -- PHP Version: 7.4.21
 
@@ -34,18 +34,18 @@ CREATE TABLE `books` (
   `user_id` int NOT NULL,
   `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `availability` tinyint NOT NULL,
-  `upload_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `upload_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `calendar` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=COMPACT;
 
 --
 -- Dumping data for table `books`
 --
 
-INSERT INTO `books` (`id`, `title`, `author`, `category_id`, `user_id`, `description`, `availability`) VALUES
-(1, 'Todo', 'Tada', 6, 1, 'Todo tada', 1),
-(5, 'Josh & Isi', 'The Creative Twins', 6, 1, 'The creative twins', 1),
-(6, 'esfwsg', 'wetwer', 7, 1, 'wetewr', 1),
-(7, 'Atomic Habits', 'James Clear', 6, 1, 'An atomic habit is a regular practice or routine that is not only small and easy to do but is also the source of incredible power; a component of the system of compound growth. Bad habits repeat themselves again and again not because you don\'t want to change, but because you have the wrong system for change.', 1);
+INSERT INTO `books` (`id`, `title`, `author`, `category_id`, `user_id`, `description`, `availability`, `calendar`) VALUES
+(1, 'Thursdays', 'Jackson Biko', 6, 2, 'Thursdays is a small book, easy to read even in one sitting. He tackles the subject of struggling artists and with a brush of mental health. It\'s about a music band, vina wira, who play every Thursday and their hunger to make it.', 1, '2021-12-02'),
+(5, 'The 4-Hour Workweek', 'Tim Ferriss', 6, 2, 'Tim Ferriss wrote \'The 4-Hour Work Week\' for all those tired of postponing their life until retirement, who instead want to live life large and in the moment, right now. In The 4-Hour Work Week, Ferriss promises a way to get all the rewards of working without having to wait until the end of your career.', 0, '2021-12-03'),
+(7, 'Atomic Habits', 'James Clear', 6, 2, 'An atomic habit is a regular practice or routine that is not only small and easy to do but is also the source of incredible power; a component of the system of compound growth. Bad habits repeat themselves again and again not because you don\'t want to change, but because you have the wrong system for change.', 1, '2021-12-02');
 
 -- --------------------------------------------------------
 
@@ -89,10 +89,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `role`, `password`, `access`) VALUES
-(1, 'admin', 'admin@gmail.com', 'admin', 'admin', 1),
-(2, 'rachel', 'rachel@gmail.com', 'student', '$2y$10$EOiYy6FgsG9pumHl3By0eehbDYMMnSncMqIlpghKRJnq6JxJ/9YZW', 1),
-(3, 'christine', 'christine@gmail.com', 'student', '$2y$10$vAg/vhYegsL5Svo0QHMYvugf3R.9A0ziYv53zw3coyPvd8nuymhZO', 1),
-(4, 'assistant', 'assit@gmail.com', 'staff', '$2y$10$HDFKlreNBLuPz2Nv4GUOmeU0xHqiN.c74rJHY/RhbeRBhSKyRRl9C', 0);
+(2, 'rachel', 'rachel@gmail.com', 'admin', '$2y$10$EOiYy6FgsG9pumHl3By0eehbDYMMnSncMqIlpghKRJnq6JxJ/9YZW', 1),
+(3, 'christine', 'christine@gmail.com', 'admin', '$2y$10$vAg/vhYegsL5Svo0QHMYvugf3R.9A0ziYv53zw3coyPvd8nuymhZO', 1),
+(4, 'assistant', 'assit@gmail.com', 'staff', '$2y$10$HDFKlreNBLuPz2Nv4GUOmeU0xHqiN.c74rJHY/RhbeRBhSKyRRl9C', 0),
+(6, 'student1', 'student1@gmail.com', 'student', '$2y$10$h01rnvidKat7lcZuWja7c.JSEGiVbRE1U2I319p/In1LEI2aYYSwO', 0),
+(7, 'librarian', 'librarian@gmail.com', 'librarian', '$2y$10$fNXcXuKMEfnxqh4UXlMYqurporNOGTYMOGquiceQInhpaBb19/unC', 1);
 
 --
 -- Indexes for dumped tables
@@ -137,7 +138,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- Constraints for dumped tables
 --
