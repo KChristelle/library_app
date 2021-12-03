@@ -19,7 +19,7 @@ include(ROOT_PATH . "/app/controllers/books.php");
   <!-- Work Sans Link -->
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
 
-  <!-- <link rel="stylesheet" href="../assets/css/styles.css"> -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/admin.css">
 </head>
 
@@ -27,7 +27,7 @@ include(ROOT_PATH . "/app/controllers/books.php");
   <?php include("header.php") ?>
   <!-- TODO Change CSS to user  -->
   <!-- Home Page Wrapper -->
-  <div class="admin-wrapper">
+  <div class="wrapper">
 
     <!--  Home Content-->
     <div class="admin-content">
