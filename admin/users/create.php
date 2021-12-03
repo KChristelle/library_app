@@ -23,88 +23,98 @@ include(ROOT_PATH . "/app/controllers/users.php");
 </head>
 
 <body>
+    <?php if (isset($_SESSION['id'])) : ?>
 
-    <!-- Header -->
-    <?php include(ROOT_PATH . "/app/includes/adminHeader.php") ?>
+        <!-- Header -->
+        <?php include(ROOT_PATH . "/app/includes/adminHeader.php") ?>
 
-    <!-- Admin Page Wrapper -->
-    <div class="admin-wrapper">
+        <!-- Admin Page Wrapper -->
+        <div class="admin-wrapper">
 
-        <!-- Left side bar -->
-        <?php include(ROOT_PATH . "/app/includes/adminSideBar.php") ?>
+            <!-- Left side bar -->
+            <?php include(ROOT_PATH . "/app/includes/adminSideBar.php") ?>
 
 
-        <!--  Admin Content-->
-        <div class="admin-content">
-            <div class="button-group">
-                <a href="create.php" class="btn btn-outline-info">Add a User</a>
-                <a href="index.php" class="btn btn-outline-info">Manage Users</a>
+            <!--  Admin Content-->
+            <div class="admin-content">
+                <div class="button-group">
+                    <a href="create.php" class="btn btn-outline-info">Add a User</a>
+                    <a href="index.php" class="btn btn-outline-info">Manage Users</a>
+                </div>
+
+                <div class="content">
+                    <h2 class="page-title">Add a User</h2>
+
+                    <?php include(ROOT_PATH . "/app/helpers/form_errors.php"); ?>
+
+                    <form action="create.php" method="POST">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input required type="text" class="form-control" name="username" id="username" value="<?php echo $username; ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input required type="email" class="form-control" name="email" id="email" value="<?php echo $email; ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="roles">Role</label>
+                            <select name="role" id="role" class="form-control">
+                                <option value="staff">Librarian</option>
+                                <option value="student">Student</option>
+                                <option value="staff">Staff</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input required type="password" name="password" class="form-control" value="<?php echo $password; ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Confirm Password</label>
+                            <input required type="password" name="conf_password" class="form-control" value="<?php echo $conf_password; ?>">
+                        </div>
+
+                        <div class="form-check">
+                            <?php if ((isset($access)) && $access == 1) : ?>
+                                <input type="checkbox" checked class="form-check-input" name="access" id="access">
+                                <label for="access" class="form-check-label">
+                                    Librarian
+                                </label>
+                            <?php else : ?>
+                                <input type="checkbox" class="form-check-input" name="access" id="access">
+                                <label for="access" class="form-check-label">
+                                    Librarian
+                                </label>
+                            <?php endif; ?>
+                        </div>
+
+                        <div class="button-submit">
+                            <button type="submit" name="create-access" class="btn btn-primary">Done</button>
+                        </div>
+                    </form>
+                </div>
             </div>
 
+        </div>
+    <?php else : ?>
+        <div class="admin-wrapper">
             <div class="content">
-                <h2 class="page-title">Add a User</h2>
+                <h1 class="page-title" id="dash-title">Hey, there! You are not logged in.</h1>
 
-                <?php include(ROOT_PATH . "/app/helpers/form_errors.php"); ?>
+                <p style="text-align: center;"><a href="<?php echo BASE_URL . '/register.php' ?>">Sign up</p>
 
-                <form action="create.php" method="POST">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input required type="text" class="form-control" name="username" id="username" value="<?php echo $username; ?>">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input required type="email" class="form-control" name="email" id="email" value="<?php echo $email; ?>">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="roles">Role</label>
-                        <select name="role" id="role" class="form-control">
-                            <option value="staff">Librarian</option>
-                            <option value="student">Student</option>
-                            <option value="staff">Staff</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input required type="password" name="password" class="form-control" value="<?php echo $password; ?>">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Confirm Password</label>
-                        <input required type="password" name="conf_password" class="form-control" value="<?php echo $conf_password; ?>">
-                    </div>
-
-                    <div class="form-check">
-                        <?php if ((isset($access)) && $access == 1) : ?>
-                            <input type="checkbox" checked class="form-check-input" name="access" id="access">
-                            <label for="access" class="form-check-label">
-                                Librarian
-                            </label>
-                        <?php else : ?>
-                            <input type="checkbox" class="form-check-input" name="access" id="access">
-                            <label for="access" class="form-check-label">
-                                Librarian
-                            </label>
-                        <?php endif; ?>
-                    </div>
-
-                    <div class="button-submit">
-                        <button type="submit" name="create-access" class="btn btn-primary">Done</button>
-                    </div>
-                </form>
             </div>
         </div>
-
-    </div>
-
+    <?php endif; ?>
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-                        
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
+
     <!-- JavaScript -->
     <script src="../../assets/js/scripts.js"></script>
 </body>

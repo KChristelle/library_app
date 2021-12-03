@@ -24,85 +24,98 @@ include(ROOT_PATH . "/app/controllers/books.php");
 
 <body>
 
-    <!-- Admin Header -->
-    <?php include(ROOT_PATH . "/app/includes/adminHeader.php") ?>
 
-    <!-- Admin Page Wrapper -->
-    <div class="admin-wrapper">
+    <?php if (isset($_SESSION['id'])) : ?>
 
-        <!-- Left side bar -->
-        <?php include(ROOT_PATH . "/app/includes/adminSideBar.php") ?>
+        <!-- Admin Header -->
+        <?php include(ROOT_PATH . "/app/includes/adminHeader.php") ?>
+
+        <!-- Admin Page Wrapper -->
+        <div class="admin-wrapper">
+
+            <!-- Left side bar -->
+            <?php include(ROOT_PATH . "/app/includes/adminSideBar.php") ?>
 
 
-        <!--  Admin Content-->
-        <div class="admin-content">
-            <div class="button-group">
-                <a href="create.php" class="btn btn-outline-info">Add a Book</a>
-                <a href="index.php" class="btn btn-outline-info">Manage Books</a>
+            <!--  Admin Content-->
+            <div class="admin-content">
+                <div class="button-group">
+                    <a href="create.php" class="btn btn-outline-info">Add a Book</a>
+                    <a href="index.php" class="btn btn-outline-info">Manage Books</a>
+                </div>
+
+                <div class="content">
+                    <h2 class="page-title">Create a Book</h2>
+
+                    <?php include(ROOT_PATH . "/app/helpers/form_errors.php"); ?>
+
+                    <form action="create.php" method="POST" enctype="multipart/form-data">
+                        <!-- Title -->
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" name="title" value="<?php echo $title ?>" id="text_input">
+                        </div>
+
+                        <!-- Author -->
+                        <div class="form-group">
+                            <label for="title">Author</label>
+                            <input type="text" class="form-control" name="author" value="<?php echo $author ?>" id="text_input">
+                        </div>
+
+                        <!-- Description -->
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea name="description" id="description" class="form-control"><?php echo $description ?></textarea>
+                        </div>
+
+                        <!-- Category -->
+                        <div class="form-group">
+                            <label for="categories">Category</label>
+                            <select name="category_id" id="category" class="form-control">
+                                <option value=""></option>
+                                <?php foreach ($categories as $key => $category) : ?>
+                                    <?php if (!empty($category_id) && $category_id == $category['id']) : ?>
+                                        <option selected value="<?php echo $category['id'] ?>"><?php echo $category['name'] ?></option>
+                                    <?php else : ?>
+                                        <option value="<?php echo $category['id'] ?>"><?php echo $category['name'] ?></option>
+                                    <?php endif; ?>
+
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+
+                        <div class="form-check">
+                            <?php if (empty($availability)) : ?>
+                                <input type="checkbox" class="form-check-input" name="availability" id="available">
+                                <label for="available" class="form-check-label">
+                                    Available
+                                </label>
+                            <?php else : ?>
+                                <input type="checkbox" checked class="form-check-input" name="availability" id="available">
+                                <label for="available" class="form-check-label">
+                                    Available
+                                </label>
+                            <?php endif; ?>
+                        </div>
+                        <div class="button-submit">
+                            <button type="submit" name="add-book" class="btn btn-primary">Done</button>
+                        </div>
+                    </form>
+                </div>
             </div>
 
+        </div>
+    <?php else : ?>
+        <div class="admin-wrapper">
             <div class="content">
-                <h2 class="page-title">Create a Book</h2>
+                <h1 class="page-title" id="dash-title">Hey, there! You are not logged in.</h1>
 
-                <?php include(ROOT_PATH . "/app/helpers/form_errors.php"); ?>
+                <p style="text-align: center;"><a href="<?php echo BASE_URL . '/register.php' ?>">Sign up</p>
 
-                <form action="create.php" method="POST" enctype="multipart/form-data">
-                    <!-- Title -->
-                    <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" class="form-control" name="title" value="<?php echo $title ?>" id="text_input">
-                    </div>
-
-                    <!-- Author -->
-                    <div class="form-group">
-                        <label for="title">Author</label>
-                        <input type="text" class="form-control" name="author" value="<?php echo $author ?>" id="text_input">
-                    </div>
-
-                    <!-- Description -->
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea name="description" id="description" class="form-control"><?php echo $description ?></textarea>
-                    </div>
-
-                    <!-- Category -->
-                    <div class="form-group">
-                        <label for="categories">Category</label>
-                        <select name="category_id" id="category" class="form-control">
-                            <option value=""></option>
-                            <?php foreach ($categories as $key => $category) : ?>
-                                <?php if (!empty($category_id) && $category_id == $category['id']) : ?>
-                                    <option selected value="<?php echo $category['id'] ?>"><?php echo $category['name'] ?></option>
-                                <?php else : ?>
-                                    <option value="<?php echo $category['id'] ?>"><?php echo $category['name'] ?></option>
-                                <?php endif; ?>
-
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-
-                    <div class="form-check">
-                        <?php if (empty($availability)) : ?>
-                            <input type="checkbox" class="form-check-input" name="availability" id="available">
-                            <label for="available" class="form-check-label">
-                                Available
-                            </label>
-                        <?php else : ?>
-                            <input type="checkbox" checked class="form-check-input" name="availability" id="available">
-                            <label for="available" class="form-check-label">
-                                Available
-                            </label>
-                        <?php endif; ?>
-                    </div>
-                    <div class="button-submit">
-                        <button type="submit" name="add-book" class="btn btn-primary">Done</button>
-                    </div>
-                </form>
             </div>
         </div>
 
-    </div>
-
+    <?php endif; ?>
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 

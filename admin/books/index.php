@@ -96,7 +96,14 @@ include(ROOT_PATH . "/app/controllers/books.php");
 
         </div>
     <?php else : ?>
-        <h1>Not logged in</h1>
+        <div class="admin-wrapper">
+            <div class="content">
+                <h1 class="page-title" id="dash-title">Hey, there! You are not logged in.</h1>
+
+                <p style="text-align: center;"><a href="<?php echo BASE_URL . '/register.php' ?>">Sign up</p>
+
+            </div>
+        </div>
     <?php endif; ?>
 
     <!-- Jquery -->
