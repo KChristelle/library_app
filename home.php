@@ -32,8 +32,8 @@ include(ROOT_PATH . "/app/controllers/books.php");
     <!-- Admin Page Wrapper -->
     <div class="admin-wrapper">
 
-
       <div class="content">
+
         <div class="input-group rounded col-md-4 ml-auto">
           <form action="" method="get">
             <div class="input-group">
@@ -44,6 +44,8 @@ include(ROOT_PATH . "/app/controllers/books.php");
             </div>
           </form>
         </div>
+
+        
         <h2 class="page-title" id="dash-title">HomePage</h2>
         <?php if (isset($_SESSION['id'])) : ?>
           <h4>
