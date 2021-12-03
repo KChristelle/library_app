@@ -21,8 +21,6 @@
 </head>
 
 <body>
-    <!-- TODO do we need the line below -->
-    <?php include(ROOT_PATH . "/app/includes/header.php") ?>
 
     <div class="wrapper">
                 <form action="index.php" method="POST" id="survey-form">

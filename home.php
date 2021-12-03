@@ -27,14 +27,24 @@ include(ROOT_PATH . "/app/controllers/books.php");
 
   <?php if (isset($_SESSION['id'])) : ?>
     <!-- Admin Header -->
-    <?php include(ROOT_PATH . "/app/includes/adminHeader.php") ?>
+    <?php include(ROOT_PATH . "/header.php") ?>
 
     <!-- Admin Page Wrapper -->
     <div class="admin-wrapper">
 
-
-
       <div class="content">
+
+        <div class="input-group rounded col-md-4 ml-auto">
+          <form action="" method="get">
+            <div class="input-group">
+              <input name="search" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+              <button name="search-btn" class="btn btn-outline-info border-0" id="search-addon" style="margin-left:5px;">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+
         <h2 class="page-title" id="dash-title">HomePage</h2>
         <?php if (isset($_SESSION['id'])) : ?>
           <h4>
