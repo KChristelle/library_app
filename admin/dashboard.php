@@ -51,9 +51,6 @@ include(ROOT_PATH . "/app/controllers/books.php");
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
-    <!-- Ckeditor -->
-    <script src="https://cdn.ckeditor.com/ckeditor5/22.0.0/classic/ckeditor.js"></script>
-
     <!-- JavaScript -->
     <script src="../assets/js/scripts.js"></script>
 </body>

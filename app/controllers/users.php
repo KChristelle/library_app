@@ -22,6 +22,7 @@ function loginUser($user)
     $_SESSION['id'] = $user['id'];
     $_SESSION['username'] = $user['username'];
     $_SESSION['access'] = $user['access'];
+    $_SESSION['role'] = $user['role'];
     $_SESSION['message'] = 'You are now logged in';
     $_SESSION['type'] = 'success';
 
@@ -47,7 +48,7 @@ if (isset($_POST['register-btn']) || isset($_POST['create-access'])) {
             $_POST['access'] = 1;
             $user_id = create($table, $_POST);
 
-            $_SESSION['message'] = "Admin user created successfully";
+            $_SESSION['message'] = "Librarian user created successfully";
             $_SESSION['type'] = "success";
             header('location: ' . BASE_URL . '/admin/users/index.php');
             exit();
