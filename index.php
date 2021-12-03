@@ -31,11 +31,27 @@ include(ROOT_PATH . "/app/controllers/books.php");
 
     <!--  Home Content-->
     <div class="admin-content">
-      
+
+      <div class="input-group rounded col-md-4 ml-auto">
+        <form action="" method="get">
+          <div class="input-group">
+            <input name="search" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+            <button name="search-btn" class="btn btn-outline-info border-0" id="search-addon" style="margin-left:5px;">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+
       <div class="content">
         <h2 class="page-title">HomePage</h2>
-        <h4> <Center> Hello, User!</Center><br></h1>
-        
+
+        <?php if (isset($_SESSION['id'])) : ?>
+        <h4>
+          <Center> Hello, <?php echo $_SESSION['username'] ?></Center><br>
+        </h4>
+        <?php endif; ?>
+
         <?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
         <table>
           <thead>
@@ -50,13 +66,21 @@ include(ROOT_PATH . "/app/controllers/books.php");
                 <td><?php echo $key + 1; ?></td>
                 <td><?php echo $book['title']; ?></td>
                 <td><?php echo $book['author']; ?></td>
-                <!-- TODO Create a borrow.php file for this -->
-                <td><a href=""></a>Borrow</td>
 
-                
+                <?php if ($book['availability']) : ?>
+                  <td>
+                    <p id="unavailale">Borrowed</a>
+                  </td>
+                <?php else : ?>
+                  <td>
+                    <p id="available">Available</a>
+                  </td>
+                <?php endif; ?>
+
+
               </tr>
             <?php endforeach; ?>
-            
+
           </tbody>
         </table>
 
